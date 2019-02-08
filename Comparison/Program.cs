@@ -14,7 +14,8 @@ namespace Comparison
             produtos.Add(new Produto("Farinha", 5.00));
             produtos.Add(new Produto("Macarrão", 3.50));
 
-            produtos.Sort(ComparaProduto);
+            //Comparison<Produto> comp = (p1, p2) => p1.Nome.ToUpper().CompareTo(p2.Nome.ToUpper());
+            produtos.Sort((p1, p2) => p1.Nome.ToUpper().CompareTo(p2.Nome.ToUpper()));
 
             foreach (var produto in produtos)
             {
@@ -23,9 +24,6 @@ namespace Comparison
             }
         }
 
-        static int ComparaProduto(Produto p1, Produto p2)
-        {
-            return p1.Nome.ToUpper().CompareTo(p2.Nome.ToUpper());
-        }
+       
     }
 }
