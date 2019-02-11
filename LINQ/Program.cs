@@ -76,6 +76,9 @@ namespace LINQ
 
             var r13 = produtos.Where(p => p.Categoria.Id == 1).Average(p => p.Preco);
             Console.WriteLine("Categoria 1 a média dos preços: " + r13);
+
+            var r14 = produtos.Where(p => p.Categoria.Id == 5).Select(p => p.Preco).DefaultIfEmpty(0.0).Average();
+            Console.WriteLine("Categoria 5 a média dos preços: " + r14);
         }
     }
 }
