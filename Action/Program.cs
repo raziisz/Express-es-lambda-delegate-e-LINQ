@@ -1,8 +1,8 @@
-﻿using Predicate.Classes;
+﻿using Action.Entidades;
 using System;
 using System.Collections.Generic;
 
-namespace Predicate
+namespace Action
 {
     class Program
     {
@@ -14,8 +14,11 @@ namespace Predicate
             list.Add(new Product("Tablet", 350.50));
             list.Add(new Product("HD Case", 80.90));
 
-            //list.RemoveAll(p => p.Preco >= 100.0); Com expressao
-            list.RemoveAll(ProdutoTeste); // com funcao
+            //list.ForEach(AtualizarPreco); com funcao
+            //Action<Product> act = AtualizarPreco; // Delegate recebendo funcao
+            //Action<Product> act = p => { p.Preco += p.Preco * 0.1; }; // Delegate recebendo funcao lambda
+            //list.ForEach(act);
+            list.ForEach(p => { p.Preco += p.Preco * 0.1; }); // for each recebendo expressao lambda
 
             foreach (var produto in list)
             {
@@ -23,9 +26,9 @@ namespace Predicate
             }
         }
 
-        public static bool ProdutoTeste(Product p)
+        static void AtualizarPreco(Product p)
         {
-            return p.Preco >= 100.0;
+            p.Preco += p.Preco * 0.1;
         }
     }
 }
