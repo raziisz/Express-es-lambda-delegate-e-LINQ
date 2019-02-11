@@ -53,6 +53,11 @@ namespace LINQ
             var r5 = r4.Skip(2).Take(4);
             Print("TIER 1 ORDENADO POR PRECO E TMB POR NOME SKIP 2 TAKE 4", r5);
 
+            var r6 = produtos.FirstOrDefault();
+            Console.WriteLine("First test1: " +r6);
+
+            var r7 = produtos.Where(p => p.Preco > 3000.0).FirstOrDefault();
+            Console.WriteLine("First or default teste2: "+r7);
         }
     }
 }
