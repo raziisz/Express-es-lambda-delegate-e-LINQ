@@ -50,6 +50,9 @@ namespace LINQ
             var r4 = produtos.Where(p => p.Categoria.Tier == 1).OrderBy(p => p.Preco).ThenBy(p => p.Nome);
             Print("TIER 1 ORDENADO POR PRECO E TMB POR NOME", r4);
 
+            var r5 = r4.Skip(2).Take(4);
+            Print("TIER 1 ORDENADO POR PRECO E TMB POR NOME SKIP 2 TAKE 4", r5);
+
         }
     }
 }
