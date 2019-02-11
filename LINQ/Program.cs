@@ -47,6 +47,9 @@ namespace LINQ
             var r3 = produtos.Where(p => p.Nome[0] == 'C').Select(p => new { p.Nome, p.Preco, CategoriaNome = p.Categoria.Nome });
             Print("Nome começados com C e objetos anonimos", r3);
 
+            var r4 = produtos.Where(p => p.Categoria.Tier == 1).OrderBy(p => p.Preco).ThenBy(p => p.Nome);
+            Print("TIER 1 ORDENADO POR PRECO E TMB POR NOME", r4);
+
         }
     }
 }
