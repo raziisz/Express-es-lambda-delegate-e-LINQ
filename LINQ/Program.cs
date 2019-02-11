@@ -38,22 +38,42 @@ namespace LINQ
                 new Produto(){ Id = 11, Nome = "Level", Preco = 70.0, Categoria = c1}
             };
 
-            var r1 = produtos.Where(p => p.Categoria.Tier == 1 && p.Preco < 900.0);
-           Print("TIER 1 AND PRICE < 900: ",r1);
+            //var r1 = produtos.Where(p => p.Categoria.Tier == 1 && p.Preco < 900.0);
+            var r1 =
+                from p in produtos
+                where p.Categoria.Tier == 1 && p.Preco < 900.0
+                select p;
+           Print("TIER 1 AND PRICE < 900: ", r1);
 
-            var r2 = produtos.Where(p => p.Categoria.Nome == "Tools").Select(p => p.Nome);
+            // var r2 = produtos.Where(p => p.Categoria.Nome == "Tools").Select(p => p.Nome);
+            var r2 = from p in produtos
+                     where p.Categoria.Nome == "Tools"
+                     select p.Nome;
             Print("NOMES DOS PRODUTOS DA CATEGORIA TOOLS", r2);
 
-            var r3 = produtos.Where(p => p.Nome[0] == 'C').Select(p => new { p.Nome, p.Preco, CategoriaNome = p.Categoria.Nome });
+            //var r3 = produtos.Where(p => p.Nome[0] == 'C').Select(p => new { p.Nome, p.Preco, CategoriaNome = p.Categoria.Nome });
+            var r3 = from p in produtos
+                     where p.Nome[0] == 'C'
+                     select new
+                     {
+                         p.Nome,
+                         p.Preco,
+                         CategoriaNome = p.Categoria.Nome
+                     };
             Print("Nome começados com C e objetos anonimos", r3);
 
-            var r4 = produtos.Where(p => p.Categoria.Tier == 1).OrderBy(p => p.Preco).ThenBy(p => p.Nome);
+            //var r4 = produtos.Where(p => p.Categoria.Tier == 1).OrderBy(p => p.Preco).ThenBy(p => p.Nome);
+            var r4 = from p in produtos
+                     where p.Categoria.Tier == 1
+                     orderby p.Nome
+                     orderby p.Preco
+                     select p;
             Print("TIER 1 ORDENADO POR PRECO E TMB POR NOME", r4);
 
-            var r5 = r4.Skip(2).Take(4);
+            var r5 = (from p in r4 select p).Skip(2).Take(4);
             Print("TIER 1 ORDENADO POR PRECO E TMB POR NOME SKIP 2 TAKE 4", r5);
 
-            var r6 = produtos.FirstOrDefault();
+            var r6 = (from p in produtos select p).FirstOrDefault();
             Console.WriteLine("First test1: " +r6);
 
             var r7 = produtos.Where(p => p.Preco > 3000.0).FirstOrDefault();
@@ -83,7 +103,9 @@ namespace LINQ
             var r15 = produtos.Where(p => p.Categoria.Id == 1).Select(p => p.Preco).Aggregate(0.0, (x, y) => x + y);
             Console.WriteLine("categoria 1 agregacai soma: "+r15);
 
-            var r16 = produtos.GroupBy(p => p.Categoria);
+            Console.WriteLine();
+            //var r16 = produtos.GroupBy(p => p.Categoria);
+            var r16 = from p in produtos group p by p.Categoria;
             foreach (IGrouping<Categoria, Produto> grupo in r16)
             {
                 Console.WriteLine("Categoria "+ grupo.Key.Nome+ ":");
