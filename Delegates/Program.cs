@@ -3,7 +3,7 @@ using System;
 
 namespace Delegates
 {
-    delegate double OperacaoNumericaBinaria(double n1, double n2);
+    delegate void OperacaoNumericaBinaria(double n1, double n2);
     class Program
     {
         static void Main(string[] args)
@@ -11,10 +11,10 @@ namespace Delegates
             double a = 10;
             double b = 12;
 
-            OperacaoNumericaBinaria op = CalcularServico.Sum;
-
-            double resultado = op.Invoke(a, b);
-            Console.WriteLine(resultado);
+            OperacaoNumericaBinaria op = CalcularServico.ShowSum;
+            op += CalcularServico.ShowMax;
+            op.Invoke(a, b);
+            
         }
     }
 }
