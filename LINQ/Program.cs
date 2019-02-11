@@ -61,6 +61,9 @@ namespace LINQ
 
             var r8 = produtos.Where(p => p.Id == 3).SingleOrDefault();
             Console.WriteLine("Single ou default teste 1: "+r8);
+
+            var r9 = produtos.Where(p => p.Id == 30).SingleOrDefault();
+            Console.WriteLine("Single ou default teste 2: " + r9);
         }
     }
 }
