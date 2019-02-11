@@ -44,6 +44,9 @@ namespace LINQ
             var r2 = produtos.Where(p => p.Categoria.Nome == "Tools").Select(p => p.Nome);
             Print("NOMES DOS PRODUTOS DA CATEGORIA TOOLS", r2);
 
+            var r3 = produtos.Where(p => p.Nome[0] == 'C').Select(p => new { p.Nome, p.Preco, CategoriaNome = p.Categoria.Nome });
+            Print("Nome começados com C e objetos anonimos", r3);
+
         }
     }
 }
