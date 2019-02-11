@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comparison", "Comparison\Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delegates", "Delegates\Delegates.csproj", "{EF3978CD-A6F3-4279-B552-B0BCA2F6F7C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Predicate", "Predicate\Predicate.csproj", "{40830913-805C-4956-83E1-218E1234F87C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Predicate", "Predicate\Predicate.csproj", "{40830913-805C-4956-83E1-218E1234F87C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Action", "Action\Action.csproj", "{89D6468C-3BC4-4784-900F-8663D656FE8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Action", "Action\Action.csproj", "{89D6468C-3BC4-4784-900F-8663D656FE8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ", "LINQ\LINQ.csproj", "{F93E60A6-D14D-47BF-81CA-ED7C3F9C4E73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{89D6468C-3BC4-4784-900F-8663D656FE8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89D6468C-3BC4-4784-900F-8663D656FE8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89D6468C-3BC4-4784-900F-8663D656FE8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F93E60A6-D14D-47BF-81CA-ED7C3F9C4E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F93E60A6-D14D-47BF-81CA-ED7C3F9C4E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F93E60A6-D14D-47BF-81CA-ED7C3F9C4E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F93E60A6-D14D-47BF-81CA-ED7C3F9C4E73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
