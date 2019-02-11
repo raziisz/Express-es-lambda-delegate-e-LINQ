@@ -70,6 +70,12 @@ namespace LINQ
 
             var r11 = produtos.Min(p => p.Preco);
             Console.WriteLine("Preco maximo: " + r11);
+
+            var r12 = produtos.Where(p => p.Categoria.Id == 1).Sum(p => p.Preco);
+            Console.WriteLine("Categoria 1 soma dos preços: "+r12);
+
+            var r13 = produtos.Where(p => p.Categoria.Id == 1).Average(p => p.Preco);
+            Console.WriteLine("Categoria 1 a média dos preços: " + r13);
         }
     }
 }
