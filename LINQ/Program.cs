@@ -64,6 +64,12 @@ namespace LINQ
 
             var r9 = produtos.Where(p => p.Id == 30).SingleOrDefault();
             Console.WriteLine("Single ou default teste 2: " + r9);
+
+            var r10 = produtos.Max(p => p.Preco);
+            Console.WriteLine("Preco maximo: "+r10);
+
+            var r11 = produtos.Min(p => p.Preco);
+            Console.WriteLine("Preco maximo: " + r11);
         }
     }
 }
