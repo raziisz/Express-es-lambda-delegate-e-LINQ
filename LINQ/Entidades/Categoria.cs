@@ -10,6 +10,11 @@ namespace LINQ.Entidades
         public string Nome { get; set; }
         public int Tier { get; set; }
 
+        public Categoria()
+        {
+
+        }
+
         public Categoria(int id, string nome, int tier)
         {
             Id = id;
