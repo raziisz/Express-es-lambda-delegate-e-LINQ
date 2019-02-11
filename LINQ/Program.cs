@@ -58,6 +58,9 @@ namespace LINQ
 
             var r7 = produtos.Where(p => p.Preco > 3000.0).FirstOrDefault();
             Console.WriteLine("First or default teste2: "+r7);
+
+            var r8 = produtos.Where(p => p.Id == 3).SingleOrDefault();
+            Console.WriteLine("Single ou default teste 1: "+r8);
         }
     }
 }
